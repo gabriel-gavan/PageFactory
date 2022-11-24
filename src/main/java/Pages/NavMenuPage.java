@@ -73,6 +73,8 @@ public class NavMenuPage extends SeleniumWrappers {
 	@FindBy(linkText ="Post Formats") 
 	public WebElement postFormatsBlogLink;
 	
+	@FindBy(css ="h6>a[href='https://keybooks.ro/shop/the-wicked-king/']") 
+	public WebElement selectTheWickedKing;
 	
 	
 	public void navigateTo(WebElement element) {
@@ -107,6 +109,8 @@ public class NavMenuPage extends SeleniumWrappers {
 	public void openClassicsMenuOption() {
 		click(openClassic);
 	}
-	
-	
+	public void searchBookwithoutclick(String value) {
+		click(searchIcon);
+		sendKeys(searchField, value);
+	}
 }
